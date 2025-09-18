@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Beneficiary - Unified SME & Grant</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><img src="images/logo.png" alt="" style="width: 50px; height: 50px;">Unified SME & Grant</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#Beneficiary" class="active">Become a Beneficiary</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="beneficiary-intro">
+            <h2>Become a Beneficiary</h2>
+            <p>Join the Unified SME & Grant community today and unlock a world of opportunities designed to empower your growth and well-being.</p>
+            <p>As a beneficiary, you stand a chance to access:</p>
+            <ul>
+                <li>All loans with little interest rates</li>
+                <li>Access to all government and individual grants</li>
+                <li>Sponsorship and skill acquisition programs</li>
+                <li>All kinds of support tailored to your needs</li>
+                <li>Food palliatives and welfare support</li>
+            </ul>
+            <p class="registration-fee">To become a beneficiary, a one-time registration fee of <strong>2,000 Naira</strong> is required.</p>
+            <p>Kindly make your payment to Admin account;</p>
+               <p> Bank: Unity bank</p>
+               <p>Account Name: Asoluka Charles</p>
+               <p>Account No: 0057255394</p>
+               <p>Kindly attach your evidence of payment while filling the form, Thanks.</p>
+
+            <button><a href="https://forms.zohopublic.com/charleytech1/form/RegistrationForm/formperma/XkIWR4xg2CnYp_uA_YLtp2bDGUlLCmwsakVlew2kyzM">Become a Beneficiary Now</a></button>
+        </section>
+
+        <section id="registration-form-section" style="display: none;">
+            <h2>Beneficiary Registration</h2>
+            <form id="beneficiaryForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="address">Residential Address:</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <h3>Payment Details</h3>
+                    <p>Please transfer <strong>N2,000</strong> to the following bank account:</p>
+                    <div class="bank-details">
+                        <p><strong>Bank Name:</strong> [Your Bank Name Here]</p>
+                        <p><strong>Account Name:</strong> Unified SME</p>
+                        <p><strong>Account Number:</strong> [Your Account Number Here]</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="paymentReceipt">Upload Payment Receipt:</label>
+                    <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*,.pdf" required>
+                    <small>Accepted formats: Images (JPG, PNG), PDF</small>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Registration</button>
+            </form>
+            <div id="formMessage" class="message" style="display: none;"></div>
+        </section>
+
+        <section id="comments-section">
+            <h2>Suggestions / Comments</h2>
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="commentName">Your Name (Optional):</label>
+                    <input type="text" id="commentName" name="commentName">
+                </div>
+                <div class="form-group">
+                    <label for="commentEmail">Your Email (Optional):</label>
+                    <input type="email" id="commentEmail" name="commentEmail">
+                </div>
+                <div class="form-group">
+                    <label for="userComment">Your Suggestion/Comment:</label>
+                    <textarea id="userComment" name="userComment" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Comment</button>
+            </form>
+            <div id="commentMessage" class="message" style="display: none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+             <h3>Contact Us</h3>
+                    <p>Email: Unifiedsmeandgrants@gmail.com</p>
+                    <p>Phone: 09068420849</p>
+                    <p>Address: Zone 3 Federal Secretariat, Abuja, Nigeria</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>

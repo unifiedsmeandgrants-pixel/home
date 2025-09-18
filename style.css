@@ -1,0 +1,605 @@
+/* General Body & Typography */
+:root {
+    --primary-color: #004d40; /* Dark Teal - inspired by Nigerian flag green but darker for sophistication */
+    --secondary-color: #ffd700; /* Gold/Yellow - complementary */
+    --accent-color: #00796b; /* Slightly lighter teal */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --bg-light: #f9f9f9;
+    --bg-dark: #2c3e50; /* Dark background for footer */
+    --card-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    color: green;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; text-align: center; margin-bottom: 30px; }
+h3 { font-size: 1.5em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Dynamic Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(0,77,64,0.1) 0%, rgba(0,77,64,0) 25%),
+        radial-gradient(circle at 90% 80%, rgba(255,215,0,0.1) 0%, rgba(255,215,0,0) 25%),
+        linear-gradient(135deg, rgba(0,77,64,0.05) 0%, rgba(0,77,64,0.02) 50%, rgba(255,215,0,0.05) 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.btn-secondary {
+    background: var(--accent-color);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--light-text-color);
+    margin-bottom: 0;
+}
+
+.logo p {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: -5px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 77, 64, 0.7), rgba(0, 77, 64, 0.7)), url('https://via.placeholder.com/1600x600/004d40/ffffff?text=Empowering+SMEs') no-repeat center center/cover;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* For pseudo-element animation */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,215,0, 0.05); /* Subtle gold overlay */
+    transform: rotate(45deg);
+    animation: rotateOverlay 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotateOverlay {
+    from { transform: rotate(0deg) translate(-50%, -50%); }
+    to { transform: rotate(360deg) translate(-50%, -50%); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    color: var(--light-text-color);
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.qualification-text {
+    font-size: 1em;
+    margin-top: 20px;
+    background: rgba(255,215,0,0.2);
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--light-text-color);
+}
+
+/* Sections General */
+section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+}
+
+section:nth-of-type(even) {
+    background-color: #e9e9e9; /* Slightly different background for alternating sections */
+}
+
+
+/* About Section */
+.about-section h2 {
+    margin-bottom: 20px;
+}
+
+.government-activity {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.government-activity h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.government-activity ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #555;
+}
+
+.government-activity ul li {
+    margin-bottom: 8px;
+}
+
+
+/* Loans & Grants Section */
+.loans-grants-section {
+    text-align: center;
+}
+
+.funding-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.funding-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.funding-card:hover {
+    transform: translateY(-10px);
+}
+
+.funding-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.funding-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.funding-card .fast-disbursement {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.9em;
+    margin-top: 15px;
+    display: block;
+}
+
+.image-gallery {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.image-gallery > p {
+    grid-column: 1 / -1; /* Make the paragraph span all columns */
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+.gallery-item {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Why Apply Section */
+.why-apply-section {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 80px 0;
+}
+
+.why-apply-section h2 {
+    color: var(--secondary-color);
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.reason-item {
+    background: green;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.reason-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.reason-item h3 {
+    color: var(--light-text-color);
+    margin-bottom: 10px;
+}
+
+.reason-item p {
+    font-size: 0.95em;
+    color: rgba(255, 255, 255, 0.8);
+}
+.reason-item h2 {
+    color: green;
+}
+
+/* Loan Calculator Section */
+.calculator-section {
+    text-align: center;
+}
+
+.calculator-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.2);
+}
+
+.repayment-results {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.repayment-results h3 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.repayment-results p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.repayment-results span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Apply Section */
+.apply-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: var(--accent-color); /* A distinct color for CTA */
+    color: black;
+}
+
+.apply-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.qualification-note {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.apply-cta p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+
+/* Footer */
+footer {
+    background: var(--bg-dark);
+    color: var(--light-text-color);
+    padding: 40px 0 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-col h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Subtle line for visual separation */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .funding-types, .reasons-grid, .image-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .btn-large {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin: 0 5px 8px 5px;
+    }
+
+    .calculator-card, .government-activity {
+        padding: 25px;
+    }
+}
